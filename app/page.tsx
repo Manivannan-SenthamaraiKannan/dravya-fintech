@@ -19,6 +19,7 @@ import { StartTrading } from "../components/StartTrading";
 import { StartFreeTrial } from "@/components/StartFreeTrial";
 import WatchDemo from "@/components/WatchDemo";
 import { OpenDematAccount } from "@/components/OpenDematAccount";
+import { ExploreFeatures } from "@/components/ExploreFeatures";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -83,7 +84,14 @@ export default function App() {
       case "watchdemo":
         return <WatchDemo />;
       case "OpenDematAccount":
-        return <OpenDematAccount setCurrentPage={setCurrentPage}/>;
+        return <OpenDematAccount setCurrentPage={setCurrentPage} />;
+      case "explorefeatures":
+        return (
+          <>
+            <ExploreFeatures setCurrentPage={setCurrentPage} />
+            <Footer />
+          </>
+        );
       case "home":
       default:
         return (

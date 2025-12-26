@@ -45,7 +45,7 @@ export function TradeInvest({setCurrentPage}:{setCurrentPage: (page:string)=>voi
                                 Open Demat Account
                                 <ArrowRight className="w-5 h-5" />
                             </Button>
-                            <Button size="lg" variant="outline">
+                            <Button size="lg" variant="outline" onClick={()=>setCurrentPage("explorefeatures")}>
                                 Explore Features
                             </Button>
                         </div>
