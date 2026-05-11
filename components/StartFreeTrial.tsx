@@ -45,6 +45,8 @@ import {
 } from "lucide-react";
 import { Alert, AlertDescription } from "./ui/alert";
 import { Separator } from "../components/ui/seperator";
+import NewUser from "@/models/NewUser";
+import { connectDB } from "@/lib/db";
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -63,7 +65,7 @@ export function StartFreeTrial() {
         accountNumber: "",
         ifscCode: "",
         accountType: "",
-        trialPlan: "premium",
+        trialPlan: '' as 'basic' | 'premium' | 'pro' | '',
         segments: [] as string[],
         hasAgreed: false,
         referralCode: ""
@@ -79,6 +81,15 @@ export function StartFreeTrial() {
     ];
 
     const progressPercentage = ((currentStep) / 6) * 100;
+
+    // const startMyFreeTrial = () => {
+    //     // Final submission logic here
+    //     alert("Free trial started! Check your email for details.");//Add Email Functionality later.
+    //     if(currentStep > 6){
+    //         const newUser = new NewUser(formData);
+    //         newUser.save();
+    //     };
+    // }
 
     const handleNext = () => {
         if (currentStep < 6) {
